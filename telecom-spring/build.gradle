@@ -1,0 +1,30 @@
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    compileOnly "jakarta.servlet:jakarta.servlet-api:${jakarta_servlet_api}"
+    compileOnly "org.projectlombok:lombok:${lombok}"
+    annotationProcessor "org.projectlombok:lombok:${lombok}"
+    compileOnly "com.google.code.gson:gson:${gson}"
+    compileOnly "com.google.guava:guava:${guava}"
+    compileOnly "org.springframework.data:spring-data-commons"
+    compileOnly "org.springframework.data:spring-data-mongodb"
+    compileOnly "org.springframework:spring-webmvc"
+    compileOnly "org.springframework:spring-webflux"
+    compileOnly "org.springframework:spring-web"
+    compileOnly "org.mapstruct:mapstruct:${mapstruct}"
+    annotationProcessor "org.mapstruct:mapstruct-processor:${mapstruct}"
+    compileOnly "io.jsonwebtoken:jjwt-api:${jwt}"
+    compileOnly "io.jsonwebtoken:jjwt-impl:${jwt}"
+    compileOnly "io.jsonwebtoken:jjwt-gson:${jwt}"
+
+    compileOnly "io.projectreactor:reactor-core:${reactor}"
+
+
+    compileOnly project(":telecom-commons")
+    compileOnly project(":telecom-orm")
+    compileOnly project(":telecom-orm-reactive")
+}
+
+test {
+    useJUnitPlatform()
+}

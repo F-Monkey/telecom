@@ -1,0 +1,38 @@
+plugins {
+    id 'java-platform'
+    id 'maven-publish'
+}
+
+group = 'cn.telecom'
+
+dependencies {
+    constraints {
+        api project(":telecom-commons")
+        api project(":telecom-socket-server")
+        api project(":telecom-spring")
+        api project(":telecom-state")
+    }
+}
+
+javaPlatform {
+    allowDependencies()
+}
+
+publishing {
+    repositories {
+        maven {
+            allowInsecureProtocol true
+            url "http://60.172.131.13:807/repository/maven-snapshots/"
+            credentials {
+                username 'admin'
+                password 'AnhuiTele1234!'
+            }
+        }
+    }
+
+    publications {
+        myPlatform(MavenPublication) {
+            from components.javaPlatform
+        }
+    }
+}

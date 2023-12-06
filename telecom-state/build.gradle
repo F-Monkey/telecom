@@ -1,0 +1,8 @@
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.9.0"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.9.0"
+    compileOnly "org.slf4j:slf4j-api:${slf4j}"
+    implementation "com.google.guava:guava:${guava}"
+    implementation "org.springframework:spring-context"
+    implementation project(":telecom-commons")
+}

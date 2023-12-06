@@ -1,0 +1,9 @@
+rootProject.name = 'telecom'
+include 'telecom-commons'
+include 'telecom-spring'
+include 'telecom-state'
+include 'telecom-socket-server'
+include 'telecom-bom'
+include 'telecom-orm'
+include 'telecom-orm-reactive'
+
